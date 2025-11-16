@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Employés</title>
+    <link rel="stylesheet" href="asset/style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="sidebar">
+            <h2>Staff Members</h2>
+            <div id="unassigned-list"></div>
+            <button class="btn-add">Add New Worker</button>
+        </section>
+
+        <section class="plan-etage">
+            <img src="./asset/img/plan-69159a65c5684763515973.webp" alt="Floor Plan">
+            
+            <div class="zone zone-conference">
+                <h3>Conference Room</h3>
+                <button class="add-btn">+</button>
+                <div class="employees"></div>
+            </div>
+            
+            <div class="zone zone-personnel">
+                <h3>Personnel Room</h3>
+                <button class="add-btn">+</button>
+                <div class="employees"></div>
+            </div>
+            
+            <div class="zone zone-reception">
+                <h3>Reception Room</h3>
+                <button class="add-btn">+</button>
+                <div class="employees"></div>
+            </div>
+            
+            <div class="zone zone-servers">
+                <h3>Servers Room</h3>
+                <button class="add-btn">+</button>
+                <div class="employees"></div>
+            </div>
+            
+            <div class="zone zone-security">
+                <h3>Security Room</h3>
+                <button class="add-btn">+</button>
+                <div class="employees"></div>
+            </div>
+            
+            <div class="zone zone-archives">
+                <h3>Archives Room</h3>
+                <button class="add-btn">+</button>
+                <div class="employees"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-add" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Preview</h2>
+            
+            <form id="form-add-employee" onsubmit="addEmployee(event)">
+                <input type="text" name="name" placeholder="Full Name" required>
+                
+                <select name="role" required>
+                    <option value="">Select Role</option>
+                    <option value="receptionist">Receptionist</option>
+                    <option value="it">IT Technician</option>
+                    <option value="security">Security</option>
+                    <option value="manager">Manager</option>
+                    <option value="cleaning">Cleaning</option>
+                </select>
+                
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone">
+                
+                <div class="experiences-section">
+                    <h3>Experiences:</h3>
+                    <div id="experiences-list"></div>
+                    <button type="button" class="btn-add-exp" onclick="addExperience()">+ Add Experience</button>
+                </div>
+                
+                <button type="submit">Add Employee</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./asset/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI';
+    background: #e8eef5;
+}
+
+.container {
+    display: flex;
+    gap: 25px;
+    padding: 30px;
+    max-width: 1800px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.sidebar h2 {
+    color: #0066cc;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#unassigned-list {
+    min-height: 450px;
+    max-height: 600px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-add {
+    width: 100%;
+    padding: 15px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.btn-add:hover {
+    background: #0052a3;
+}
+
+.plan-etage {
+    position: relative;
+}
+
+.plan-etage img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.zone {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.zone h3 {
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.zone-conference {
+    top: 10%;
+    left: 20%;
+}
+
+.zone-personnel {
+    top: 10%;
+    left: 85%;
+}
+
+.zone-reception {
+    top: 58%;
+    left: 20%;
+}
+
+.zone-servers {
+    top: 10%;
+    right: 25%;
+}
+
+.zone-security {
+    top: 70%;
+    right: 25%;
+}
+
+.zone-archives {
+     top: 70%;
+    right: 2%;
+}
+
+.add-btn {
+    width: 50px;
+    height: 50px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover {
+    background: #0052a3;
+}
+
+.employees {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #999;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.experiences-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.experiences-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+
+.experience-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+}
+
+.experience-item input {
+    margin: 8px 0;
+}
+
+.btn-remove-exp {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.btn-remove-exp:hover {
+    background: #c82333;
+}
+
+.btn-add-exp {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-add-exp:hover {
+    background: #218838;
+}
+
+.modal-content button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+    background: #0052a3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+#unassigned-list::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#unassigned-list::-webkit-scrollbar-track,
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#unassigned-list::-webkit-scrollbar-thumb,
+.modal-content::-webkit-scrollbar-thumb {
+    background: #0066cc;
+    border-radius: 10px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
+    .plan-etage img {
+        display: none;
+    }
+    
+    .plan-etage {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .zone {
+        position: static;
+        transform: none;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        border: 2px solid #0066cc;
+        box-shadow: 0 2px 8px rgba(0, 102, 204, 0.1);
+    }
+    
+    .zone h3 {
+        font-size: 18px;
+        background: transparent;
+        padding: 0;
+        margin-bottom: 15px;
+        color: #0066cc;
+    }
+    
+    .add-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
+    .sidebar h2 {
+        font-size: 20px;
+    }
+    
+    #unassigned-list {
+        min-height: 200px;
+        max-height: 300px;
+    }
+    
+    .btn-add {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .plan-etage img {
+        display: none;
+    }
+    
+    .plan-etage {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .zone {
+        position: static;
+        transform: none;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        border: 2px solid #0066cc;
+        box-shadow: 0 2px 6px rgba(0, 102, 204, 0.1);
+    }
+    
+    .zone h3 {
+        font-size: 16px;
+        background: transparent;
+        padding: 0;
+        margin-bottom: 12px;
+        color: #0066cc;
+    }
+    
+    .add-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+}
