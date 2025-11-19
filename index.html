@@ -25,26 +25,26 @@
                 <div class="employees"></div>
             </div>
 
-            <div class="zone zone-personnel">
-                <h3>Personnel Room</h3>
-                <button class="add-btn">+</button>
-                <div class="employees"></div>
-            </div>
-
-            <div class="zone zone-reception">
-                <h3>Reception Room</h3>
-                <button class="add-btn">+</button>
-                <div class="employees"></div>
-            </div>
-
-            <div class="zone zone-servers">
-                <h3>Servers Room</h3>
-                <button class="add-btn">+</button>
-                <div class="employees"></div>
-            </div>
-
             <div class="zone zone-security">
-                <h3>Security Room</h3>
+            <h3>Security Room</h3>
+            <button class="add-btn">+</button>
+            <div class="employees"></div>
+        </div>
+        
+        <div class="zone zone-reception">
+            <h3>Reception Room</h3>
+            <button class="add-btn">+</button>
+            <div class="employees"></div>
+        </div>
+        
+        <div class="zone zone-servers">
+            <h3>Servers Room</h3>
+            <button class="add-btn">+</button>
+            <div class="employees"></div>
+        </div>
+        
+                <div class="zone zone-personnel">
+                <h3>Personnel Room</h3>
                 <button class="add-btn">+</button>
                 <div class="employees"></div>
             </div>
@@ -76,12 +76,8 @@
                     <option value="cleaning">Cleaning</option>
                 </select>
 
-                <label>Photo (URL):</label>
-                <input id="url" type="url"  placeholder="paste direct image link">
-
-                <div class="photo-preview">
-                    <div class="photo-circle"></div>
-                </div>
+                <label>Photo:</label>
+                <input id="photo-upload" type="url" accept="image/*">
 
                 <div class="experiences-section">
                     <h3>Experiences:</h3>
@@ -102,6 +98,25 @@
             </form>
         </div>
     </div>
+
+    <div id="modal-Room" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Choose Worker</h2>
+
+            <div id="EmployeesRoom"></div>
+        </div>
+    </div>
+     <div id="modal-Detail" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Choose Worker</h2>
+
+            <div id="EmployeesDetail"></div>
+        </div>
+    </div>
+   
+
     <script type="module" src="./asset/js/main.js"></script>
 </body>
 

@@ -3,36 +3,41 @@ import { employees, removeEmployee } from './store.js';
 export function createEmployeeCard(emp) {
     let card = document.createElement('div');
     card.className = 'employee-card';
+    card.id = emp.id
     card.innerHTML = `
+        
         <div class="employee-info">
-            <strong>${emp.name}</strong>
+         <div class="photo-circle">
+                <img src = "${emp.photo}">
+           </div>
+         <strong>${emp.name}</strong>
             <small>${emp.role}</small>
         </div>
         <button class="btn-delete" data-id="${emp.id}">×</button>
     `;
-    
     let deleteBtn = card.querySelector('.btn-delete');
-    deleteBtn.addEventListener('click', function() {
+    deleteBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
         removeEmployee(emp.id);
         renderEmployees();
     });
-    
+
     return card;
 }
 
 export function renderEmployees() {
     let unassignedList = document.getElementById('unassigned-list');
     unassignedList.innerHTML = '';
-    
+
     let allZones = document.querySelectorAll('.zone .employees');
     for (let i = 0; i < allZones.length; i++) {
         allZones[i].innerHTML = '';
     }
-    
+
     for (let i = 0; i < employees.length; i++) {
         let emp = employees[i];
         let card = createEmployeeCard(emp);
-        
+
         if (emp.zone) {
             let allH3 = document.querySelectorAll('.zone h3');
             for (let j = 0; j < allH3.length; j++) {
@@ -48,9 +53,11 @@ export function renderEmployees() {
     }
 }
 
+
+
 export function addExperience() {
     let expList = document.getElementById('experiences-list');
-    
+
     let expItem = document.createElement('div');
     expItem.className = 'experience-item';
     expItem.innerHTML = `
@@ -68,15 +75,12 @@ export function addExperience() {
         
         <button type="button" class="btn-remove-exp">Remove</button>
     `;
-    
+
     expList.appendChild(expItem);
-    
-    
-    
-   
-    
-    let removeBtn = expItem.querySelector('.btn-remove-exp');
-    removeBtn.addEventListener('click', function(e) {
+
+
+     let removeBtn = expItem.querySelector('.btn-remove-exp');
+    removeBtn.addEventListener('click', function (e) {
         e.preventDefault();
         expItem.remove();
     });
