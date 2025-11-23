@@ -119,7 +119,7 @@ body {
     aspect-ratio: 1.2;
     justify-content: center;
     align-items: center;
-
+    
 }
 
 .zone-personnel {
@@ -138,6 +138,12 @@ body {
     aspect-ratio: 1.215;
     justify-content: center;
     align-items: center;
+}
+
+.zone-obligatoire {
+    background-color: rgba(255, 107, 107, 0.3);
+    border: 2px transparent rgba(255, 107, 107, 0.6);
+    border-radius: 14px;
 }
 
 .add-btn {
@@ -160,7 +166,6 @@ body {
 
 .employees {
     display: flex;
-    flex-direction: column;
     gap: 8px;
 }
 
@@ -176,10 +181,6 @@ body {
 
 }
 
-.employee-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
-}
 
 .employee-info strong {
     display: block;
@@ -284,7 +285,6 @@ body {
 
 .modal-content select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 12px center;
 }
@@ -414,6 +414,60 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
+
+.btn-unassign {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.employee-card-room {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+
+.employee-info-room {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.employee-info-room strong {
+    font-size: 14px;
+    color: #333;
+}
+
+.employee-info-room small {
+    font-size: 12px;
+    color: #666;
+}
+.error-message {
+    background-color: transparent;
+    color: rgb(216, 24, 24);
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    display: none;
+}
+
+
 
 @media (min-width: 768px) and (max-width: 1250px) {
     .container {
