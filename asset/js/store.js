@@ -60,7 +60,7 @@ export function assignEmployee(id, room, employees) {
 export function unassignEmployee(id, employees) {
   const employee = employees.find(e => e.id === id);
   if (!employee) return false;
- 
+
   employee.zone = null;
   return true;
 }

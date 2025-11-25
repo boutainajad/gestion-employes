@@ -33,7 +33,7 @@ export function createEmployeeCard(emp) {
     card.innerHTML = `
         <div class="employee-info-room">
             <strong>${emp.name}</strong>
-            <small>${emp.role}</small>
+            <small class = "roomrole">${emp.role}</small>
         </div>
         <button class="btn-unassign" data-id="${emp.id}">×</button>
     `;

@@ -1,4 +1,4 @@
-import { addEmployee, employees, loadData, getEmployee,  saveData, assignEmployee, getEligible} from './store.js';
+import { addEmployee, employees, loadData, getEmployee, saveData, assignEmployee, getEligible } from './store.js';
 
 import { validateForm, validateexper } from './validation.js';
 import { renderEmployees, addExperience } from './ui.js';
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('experiences-list').innerHTML = '';
     });
 
-  
+
     let addBtns = document.querySelectorAll('.add-btn');
     addBtns.forEach((btn) => {
         btn.addEventListener('click', function (e) {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-  
+
     function DetailModal(emp) {
         modalDetail.style.display = 'block';
 
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
-    
+
     function attachCardEvents() {
         let cards = document.querySelectorAll('.employee-card');
 
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
             errorDiv.style.display = 'none';
         }
     }
-    
+
     closeBtn.forEach((close) => {
         close.addEventListener('click', function () {
             modal.style.display = 'none';
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
             hideErrorMessage();
         });
     });
-    
+
     btnCancel.addEventListener('click', function () {
         modal.style.display = 'none';
         hideErrorMessage();
@@ -178,14 +178,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-  
+
     let btnAddExp = document.querySelector('.btn-add-exp');
     btnAddExp.addEventListener('click', function (e) {
         e.preventDefault();
         addExperience();
     });
 
-  
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
         form.reset();
     });
 
-    
+
     function ChambreObligatoire() {
         const zones = [
             { box: '.zone-security', list: '.security' },
