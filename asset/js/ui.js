@@ -11,7 +11,7 @@ export function createEmployeeCardSidebar(emp) {
                 <img src="${emp.photo}">
             </div>
             <strong>${emp.name}</strong>
-            <small>${emp.role}</small>
+            <small class ="roomrole">${emp.role}</small>
         </div>
         <button class="btn-delete" data-id="${emp.id}">×</button>
     `;
