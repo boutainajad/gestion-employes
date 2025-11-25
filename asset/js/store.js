@@ -9,12 +9,8 @@ export const ZONE_RULES = {
   other: ['Conference Room', 'Personnel Room']
 };
 
-export function setEmployees(newEmployees) {
-  employees = newEmployees;
-}
 
 export function getEmployee(id) {
-  console.log(employees)
   return employees.find((emp) => emp.id === id);
 }
 
@@ -64,7 +60,7 @@ export function assignEmployee(id, room, employees) {
 export function unassignEmployee(id, employees) {
   const employee = employees.find(e => e.id === id);
   if (!employee) return false;
-
+ 
   employee.zone = null;
   return true;
 }
@@ -74,8 +70,4 @@ export function getEligible(room, employees) {
     if (emp.zone) return false;
     return canAssign(emp.role, room);
   });
-}
-
-export function getEmployeesInZone(room, employees) {
-  return employees.filter(e => e.zone === room);
 }
